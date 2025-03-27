@@ -54,34 +54,66 @@ fn update() void {
     }
 }
 
+// fn updateKeys() void {
+//     @memset(&keyMem, 0);
+
+//     if (rl.isKeyDown(rl.KeyboardKey.z)) keyMem[0x01] |= 0x01; // Z - A
+//     if (rl.isKeyDown(rl.KeyboardKey.x)) keyMem[0x01] |= 0x02; // X - B
+//     if (rl.isKeyDown(rl.KeyboardKey.c)) keyMem[0x01] |= 0x04; // C - C
+//     if (rl.isKeyDown(rl.KeyboardKey.v)) keyMem[0x01] |= 0x08; // V - D
+
+//     if (rl.isKeyDown(rl.KeyboardKey.a)) keyMem[0x02] |= 0x01; // A - E
+//     if (rl.isKeyDown(rl.KeyboardKey.s)) keyMem[0x02] |= 0x02; // S - F
+//     if (rl.isKeyDown(rl.KeyboardKey.d)) keyMem[0x02] |= 0x04; // D - G
+//     if (rl.isKeyDown(rl.KeyboardKey.f)) keyMem[0x02] |= 0x08; // F - H
+
+//     if (rl.isKeyDown(rl.KeyboardKey.q)) keyMem[0x03] |= 0x01; // Q - I
+//     if (rl.isKeyDown(rl.KeyboardKey.w)) keyMem[0x03] |= 0x02; // W - J
+//     if (rl.isKeyDown(rl.KeyboardKey.e)) keyMem[0x03] |= 0x04; // E - K
+//     if (rl.isKeyDown(rl.KeyboardKey.r)) keyMem[0x03] |= 0x08; // R - L
+
+//     if (rl.isKeyDown(rl.KeyboardKey.one)) keyMem[0x04] |= 0x01; // 1 - M
+//     if (rl.isKeyDown(rl.KeyboardKey.two)) keyMem[0x04] |= 0x02; // 2 - N
+//     if (rl.isKeyDown(rl.KeyboardKey.three)) keyMem[0x04] |= 0x04; // 3 - O
+//     if (rl.isKeyDown(rl.KeyboardKey.four)) keyMem[0x04] |= 0x08; // 4 - P
+
+//     // Copy the key state to memory[0..1]
+//     memory[0] = keyMem[0]; // High byte
+//     for (1..keyMem.len) |i| {
+//         memory[1] |= keyMem[i]; // Low byte
+//     }
+// }
+
 fn updateKeys() void {
     @memset(&keyMem, 0);
 
-    if (rl.isKeyDown(rl.KeyboardKey.z)) keyMem[0x01] |= 0x01; // Z - A
-    if (rl.isKeyDown(rl.KeyboardKey.x)) keyMem[0x01] |= 0x02; // X - B
-    if (rl.isKeyDown(rl.KeyboardKey.c)) keyMem[0x01] |= 0x04; // C - C
-    if (rl.isKeyDown(rl.KeyboardKey.v)) keyMem[0x01] |= 0x08; // V - D
+    if (rl.isKeyDown(rl.KeyboardKey.zero)) keyMem[0x01] |= 0x01; // Z - A
+    if (rl.isKeyDown(rl.KeyboardKey.one)) keyMem[0x01] |= 0x02; // X - B
+    if (rl.isKeyDown(rl.KeyboardKey.two)) keyMem[0x01] |= 0x04; // C - C
+    if (rl.isKeyDown(rl.KeyboardKey.three)) keyMem[0x01] |= 0x08; // V - D
 
-    if (rl.isKeyDown(rl.KeyboardKey.a)) keyMem[0x02] |= 0x01; // A - E
-    if (rl.isKeyDown(rl.KeyboardKey.s)) keyMem[0x02] |= 0x02; // S - F
-    if (rl.isKeyDown(rl.KeyboardKey.d)) keyMem[0x02] |= 0x04; // D - G
-    if (rl.isKeyDown(rl.KeyboardKey.f)) keyMem[0x02] |= 0x08; // F - H
+    if (rl.isKeyDown(rl.KeyboardKey.four)) keyMem[0x02] |= 0x01; // A - E
+    if (rl.isKeyDown(rl.KeyboardKey.five)) keyMem[0x02] |= 0x02; // S - F
+    if (rl.isKeyDown(rl.KeyboardKey.six)) keyMem[0x02] |= 0x04; // D - G
+    if (rl.isKeyDown(rl.KeyboardKey.seven)) keyMem[0x02] |= 0x08; // F - H
 
-    if (rl.isKeyDown(rl.KeyboardKey.q)) keyMem[0x03] |= 0x01; // Q - I
-    if (rl.isKeyDown(rl.KeyboardKey.w)) keyMem[0x03] |= 0x02; // W - J
-    if (rl.isKeyDown(rl.KeyboardKey.e)) keyMem[0x03] |= 0x04; // E - K
-    if (rl.isKeyDown(rl.KeyboardKey.r)) keyMem[0x03] |= 0x08; // R - L
+    if (rl.isKeyDown(rl.KeyboardKey.eight)) keyMem[0x03] |= 0x01; // Q - I
+    if (rl.isKeyDown(rl.KeyboardKey.nine)) keyMem[0x03] |= 0x02; // W - J
+    if (rl.isKeyDown(rl.KeyboardKey.a)) keyMem[0x03] |= 0x04; // E - K
+    if (rl.isKeyDown(rl.KeyboardKey.b)) keyMem[0x03] |= 0x08; // R - L
 
-    if (rl.isKeyDown(rl.KeyboardKey.one)) keyMem[0x04] |= 0x01; // 1 - M
-    if (rl.isKeyDown(rl.KeyboardKey.two)) keyMem[0x04] |= 0x02; // 2 - N
-    if (rl.isKeyDown(rl.KeyboardKey.three)) keyMem[0x04] |= 0x04; // 3 - O
-    if (rl.isKeyDown(rl.KeyboardKey.four)) keyMem[0x04] |= 0x08; // 4 - P
+    if (rl.isKeyDown(rl.KeyboardKey.c)) keyMem[0x04] |= 0x01; // 1 - M
+    if (rl.isKeyDown(rl.KeyboardKey.d)) keyMem[0x04] |= 0x02; // 2 - N
+    if (rl.isKeyDown(rl.KeyboardKey.e)) keyMem[0x04] |= 0x04; // 3 - O
+    if (rl.isKeyDown(rl.KeyboardKey.f)) keyMem[0x04] |= 0x08; // 4 - P
 
-    // Copy the key state to memory[0..1]
-    memory[0] = keyMem[0]; // High byte
-    for (1..keyMem.len) |i| {
-        memory[1] |= keyMem[i]; // Low byte
-    }
+    // Reset memory keyboard state
+    memory[0] = 0;
+    memory[1] = 0;
+
+    // According to BytePusher spec, memory[0] is the high byte and memory[1] is the low byte
+    memory[0] = keyMem[0x03] | (keyMem[0x04] << 4); // High byte: IJKL MNOP
+    memory[1] = keyMem[0x01] | (keyMem[0x02] << 4); // Low byte: ABCD EFGH
 }
 
 fn updateAudio(stream: rl.AudioStream) void {
