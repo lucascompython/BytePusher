@@ -1,6 +1,5 @@
 const std = @import("std");
 const rl = @import("raylib");
-// const rom = @embedFile("./Palette Test.BytePusher");
 
 const MEMORY_SIZE = 0x1000008;
 const KEY_MEM_SIZE = 16;
